@@ -9,3 +9,13 @@ const get = async (id = "") => {
     }
     return await response.json()
 }
+
+const create_update_remove = async (id, user, action) => {
+    await fetch(`https://636478418a3337d9a2f7979e.mockapi.io/users/${id}`, {
+        method: action,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
+}
